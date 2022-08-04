@@ -31,7 +31,7 @@ public class ModBlockColors {
 
 
     public static synchronized void registerBlockColors(final ColorHandlerEvent.Block event) {
-       Iterator<GeodeType> geodeIt = ModBlocks.geodes.iterator();
+       Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
        while (geodeIt.hasNext()){
            GeodeType currGeode = geodeIt.next();
            HashMap<String,RegistryObject<Block>> map = currGeode.getBLOCKS();
@@ -49,7 +49,7 @@ public class ModBlockColors {
             return blockColors.getColor(state, null, null, tintIndex);
         };
 
-        Iterator<GeodeType> geodeIt = ModBlocks.geodes.iterator();
+        Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
         while (geodeIt.hasNext()) {
             GeodeType currGeode = geodeIt.next();
             HashMap<String, RegistryObject<Block>> map = currGeode.getBLOCKS();

@@ -20,7 +20,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        Iterator<GeodeType> geodeIt = ModBlocks.geodes.iterator();
+        Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
         while (geodeIt.hasNext()) {
             GeodeType currGeode = geodeIt.next();
             HashMap<String, RegistryObject<Block>> map = currGeode.getBLOCKS();

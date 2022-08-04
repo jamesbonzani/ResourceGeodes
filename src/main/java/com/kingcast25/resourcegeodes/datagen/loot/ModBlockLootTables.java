@@ -25,7 +25,7 @@ public class ModBlockLootTables extends BlockLoot {
         ResourceGeodes.logInfo("Adding Block Loot Tables");
 
 
-        Iterator<GeodeType> geodeIt = ModBlocks.geodes.iterator();
+        Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
         while (geodeIt.hasNext()) {
             GeodeType currGeode = geodeIt.next();
             ResourceGeodes.logInfo("Adding Loot Tables for "+ currGeode.name + " Geode");

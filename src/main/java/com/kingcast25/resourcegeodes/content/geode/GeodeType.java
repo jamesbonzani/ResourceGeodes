@@ -18,6 +18,8 @@ public class GeodeType {
 
     public static Item clusterDrop;
 
+    public static RegistryObject<Block>[] clusters;
+
 
     public static HashMap<String,RegistryObject<Block>> BLOCKS = new HashMap<String, RegistryObject<Block>>();
 
@@ -37,10 +39,9 @@ public class GeodeType {
         BLOCKS.put("MEDIUM",ModBlocks.BLOCKS.register("medium_"+name+"_bud", () -> new BaseClusterBlock(4,3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD), this.color,2)));
         BLOCKS.put("LARGE",ModBlocks.BLOCKS.register("large_"+name+"_bud", () -> new BaseClusterBlock(5,3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD), this.color,3)));
         BLOCKS.put("FULL",ModBlocks.BLOCKS.register(name+"_cluster", () -> new BaseClusterBlock(7,3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER), this.color,4)));
-        BLOCKS.put("BUDDING",ModBlocks.BLOCKS.register("budding_"+name, () -> new BaseBuddingBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST),
-                new Block[]{BLOCKS.get("SMALL").get(),BLOCKS.get("MEDIUM").get(),BLOCKS.get("LARGE").get(),BLOCKS.get("FULL").get()}, this.color)));
+        BLOCKS.put("BUDDING",ModBlocks.BLOCKS.register("budding_"+name, () -> new BaseBuddingBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST),this.color)));
 
-
+        clusters = new RegistryObject[]{BLOCKS.get("SMALL"),BLOCKS.get("MEDIUM"),BLOCKS.get("LARGE"),BLOCKS.get("FULL")};
     }
 
 

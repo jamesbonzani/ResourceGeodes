@@ -91,7 +91,7 @@ public class ResourceGeodes
 
     public void clientLoad(final FMLClientSetupEvent event) {
 
-        Iterator<GeodeType> geodeIt = ModBlocks.geodes.iterator();
+        Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
         while (geodeIt.hasNext()){
             GeodeType currGeode = geodeIt.next();
             HashMap<String,RegistryObject<Block>> map = currGeode.getBLOCKS();

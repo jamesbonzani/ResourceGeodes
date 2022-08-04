@@ -19,19 +19,20 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,ResourceGeodes.MOD_ID);
-    public static List<GeodeType> geodes = new ArrayList<GeodeType>();
+    public static HashMap<String,GeodeType> geodes = new HashMap<>();
 
 
     public static void blockSetup(){
 
-         geodes.add(new GeodeType("iron", FastColor.ARGB32.color(255,227, 210, 163), Items.RAW_IRON));
-
+         geodes.put("iron",new GeodeType("iron", FastColor.ARGB32.color(255,227, 210, 163), Items.RAW_IRON));
+         geodes.put("gold",new GeodeType("gold", FastColor.ARGB32.color(255,255, 203, 48), Items.RAW_GOLD));
 
 
 

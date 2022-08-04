@@ -24,7 +24,7 @@ import java.util.Random;
 public class BaseBuddingBlock extends BuddingAmethystBlock {
 
     
-    private static final List<Block> clusters = new ArrayList<Block>();
+
     private static final Direction[] DIRECTIONS = Direction.values();
 
 
@@ -33,12 +33,8 @@ public class BaseBuddingBlock extends BuddingAmethystBlock {
 
 
 
-    public BaseBuddingBlock(Properties p_152726_, Block[] clusters, int color) {
+    public BaseBuddingBlock(Properties p_152726_, int color) {
         super(p_152726_);
-        for(Block b : clusters){
-            this.clusters.add(b);
-        };
-
 
     }
 
@@ -55,12 +51,12 @@ public class BaseBuddingBlock extends BuddingAmethystBlock {
             BlockState blockstate = p_152729_.getBlockState(blockpos);
             Block block = null;
             if (canClusterGrowAtState(blockstate)) {
-                block = clusters.get(0);
+                block = ModBlocks.geodes.get(getGeodeName(blockstate.getBlock())).clusters[0].get();
             } else if (blockstate.getBlock() instanceof BaseClusterBlock && blockstate.getValue(AmethystClusterBlock.FACING) == direction) {
                 int clusterSize = blockstate.getValue(BaseClusterBlock.SIZE);
                 ResourceGeodes.logInfo("Trying to grow cluster of size: "+clusterSize);
                  if (clusterSize < 4) {
-                     block = clusters.get(clusterSize);
+                     block = ModBlocks.geodes.get(getGeodeName(blockstate.getBlock())).clusters[clusterSize].get();
                  }
             }
 
@@ -72,6 +68,12 @@ public class BaseBuddingBlock extends BuddingAmethystBlock {
         }
     }
 
+
+    public static String getGeodeName(Block block){
+        String fullName = block.getRegistryName().toString();
+        String[] parts = fullName.split("_");
+        return parts[1];
+    }
 
 
 
