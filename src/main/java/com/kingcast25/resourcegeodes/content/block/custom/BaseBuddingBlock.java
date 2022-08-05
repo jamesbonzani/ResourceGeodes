@@ -2,6 +2,7 @@ package com.kingcast25.resourcegeodes.content.block.custom;
 
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.block.ModBlocks;
+import com.kingcast25.resourcegeodes.content.geode.GeodeType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -50,13 +51,18 @@ public class BaseBuddingBlock extends BuddingAmethystBlock {
             BlockPos blockpos = p_152730_.relative(direction);
             BlockState blockstate = p_152729_.getBlockState(blockpos);
             Block block = null;
+            GeodeType thisGeode = ModBlocks.geodes.get(getGeodeName(p_152728_.getBlock()));
             if (canClusterGrowAtState(blockstate)) {
-                block = ModBlocks.geodes.get(getGeodeName(blockstate.getBlock())).clusters[0].get();
+                if(thisGeode != null) {
+                    block = thisGeode.clusters.get(0).get();
+                }
             } else if (blockstate.getBlock() instanceof BaseClusterBlock && blockstate.getValue(AmethystClusterBlock.FACING) == direction) {
                 int clusterSize = blockstate.getValue(BaseClusterBlock.SIZE);
                 ResourceGeodes.logInfo("Trying to grow cluster of size: "+clusterSize);
                  if (clusterSize < 4) {
-                     block = ModBlocks.geodes.get(getGeodeName(blockstate.getBlock())).clusters[clusterSize].get();
+                     if(thisGeode != null) {
+                         block = thisGeode.clusters.get(clusterSize).get();
+                     }
                  }
             }
 
@@ -72,7 +78,11 @@ public class BaseBuddingBlock extends BuddingAmethystBlock {
     public static String getGeodeName(Block block){
         String fullName = block.getRegistryName().toString();
         String[] parts = fullName.split("_");
-        return parts[1];
+        if (parts.length > 1){
+            ResourceGeodes.logInfo(parts[1]);
+            return parts[1];
+        }
+        return "";
     }
 
 

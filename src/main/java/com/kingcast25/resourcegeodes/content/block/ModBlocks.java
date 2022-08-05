@@ -2,6 +2,7 @@ package com.kingcast25.resourcegeodes.content.block;
 
 
 import com.kingcast25.resourcegeodes.ResourceGeodes;
+import com.kingcast25.resourcegeodes.content.block.custom.CrystalSensorBlock;
 import com.kingcast25.resourcegeodes.content.geode.GeodeType;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.item.BlockItem;
@@ -9,6 +10,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,7 +29,7 @@ import java.util.List;
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,ResourceGeodes.MOD_ID);
-    public static HashMap<String,GeodeType> geodes = new HashMap<>();
+    public static HashMap<String,GeodeType> geodes = new HashMap<String, GeodeType>();
 
 
     public static void blockSetup(){
@@ -35,10 +38,11 @@ public class ModBlocks {
          geodes.put("gold",new GeodeType("gold", FastColor.ARGB32.color(255,255, 203, 48), Items.RAW_GOLD));
 
 
+        ResourceGeodes.logInfo(geodes.size() + " Geodes Created");
 
     }
 
-
+    public static final RegistryObject<Block> SENSOR = BLOCKS.register("crystal_sensor", () -> new CrystalSensorBlock(BlockBehaviour.Properties.copy(Blocks.OBSERVER)));
 
 
 

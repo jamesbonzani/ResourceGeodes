@@ -9,24 +9,28 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class GeodeType {
 
     public String name;
-    public static int color;
+    public int color;
 
-    public static Item clusterDrop;
+    public Item clusterDrop;
 
-    public static RegistryObject<Block>[] clusters;
+    public List<RegistryObject<Block>> clusters;
 
 
-    public static HashMap<String,RegistryObject<Block>> BLOCKS = new HashMap<String, RegistryObject<Block>>();
+    public HashMap<String,RegistryObject<Block>> BLOCKS;
 
     public GeodeType(String name, int color, Item clusterDrop) {
         this.name = name;
         this.color = color;
         this.clusterDrop = clusterDrop;
+        this.clusters = new ArrayList<RegistryObject<Block>>();
+        this.BLOCKS = new HashMap<String, RegistryObject<Block>>();
 
         this.registerBlocks(name);
 
@@ -41,7 +45,11 @@ public class GeodeType {
         BLOCKS.put("FULL",ModBlocks.BLOCKS.register(name+"_cluster", () -> new BaseClusterBlock(7,3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER), this.color,4)));
         BLOCKS.put("BUDDING",ModBlocks.BLOCKS.register("budding_"+name, () -> new BaseBuddingBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST),this.color)));
 
-        clusters = new RegistryObject[]{BLOCKS.get("SMALL"),BLOCKS.get("MEDIUM"),BLOCKS.get("LARGE"),BLOCKS.get("FULL")};
+        clusters.add(BLOCKS.get("SMALL"));
+        clusters.add(BLOCKS.get("MEDIUM"));
+        clusters.add(BLOCKS.get("LARGE"));
+        clusters.add(BLOCKS.get("FULL"));
+
     }
 
 

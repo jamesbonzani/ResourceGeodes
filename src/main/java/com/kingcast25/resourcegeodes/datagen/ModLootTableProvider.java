@@ -33,6 +33,7 @@ public class ModLootTableProvider extends LootTableProvider {
 
     @Override
     protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext validationtracker) {
+        ResourceGeodes.logInfo("Validating");
         map.forEach((id, table) -> LootTables.validate(validationtracker, id, table));
     }
 
