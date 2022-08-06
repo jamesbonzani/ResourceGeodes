@@ -22,15 +22,18 @@ public class GeodeType {
 
     public List<RegistryObject<Block>> clusters;
 
+    public int tier;
+
 
     public HashMap<String,RegistryObject<Block>> BLOCKS;
 
-    public GeodeType(String name, int color, Item clusterDrop) {
+    public GeodeType(String name, int color, int tier, Item clusterDrop) {
         this.name = name;
         this.color = color;
         this.clusterDrop = clusterDrop;
         this.clusters = new ArrayList<RegistryObject<Block>>();
         this.BLOCKS = new HashMap<String, RegistryObject<Block>>();
+        this.tier = tier;
 
         this.registerBlocks(name);
 
@@ -39,10 +42,14 @@ public class GeodeType {
 
 
     public void registerBlocks(String name){
-        BLOCKS.put("SMALL",ModBlocks.BLOCKS.register("small_"+name+"_bud", () -> new BaseClusterBlock(3,4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD), this.color,1)));
-        BLOCKS.put("MEDIUM",ModBlocks.BLOCKS.register("medium_"+name+"_bud", () -> new BaseClusterBlock(4,3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD), this.color,2)));
-        BLOCKS.put("LARGE",ModBlocks.BLOCKS.register("large_"+name+"_bud", () -> new BaseClusterBlock(5,3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD), this.color,3)));
-        BLOCKS.put("FULL",ModBlocks.BLOCKS.register(name+"_cluster", () -> new BaseClusterBlock(7,3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER), this.color,4)));
+        BLOCKS.put("SMALL",ModBlocks.BLOCKS.register("small_"+name+"_bud", () -> new BaseClusterBlock(3,4, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER)
+                .lightLevel((p_152629_) -> 1), this.color,1)));
+        BLOCKS.put("MEDIUM",ModBlocks.BLOCKS.register("medium_"+name+"_bud", () -> new BaseClusterBlock(4,3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER)
+                .lightLevel((p_152629_) -> 2), this.color,2)));
+        BLOCKS.put("LARGE",ModBlocks.BLOCKS.register("large_"+name+"_bud", () -> new BaseClusterBlock(5,3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER)
+                .lightLevel((p_152629_) -> 4), this.color,3)));
+        BLOCKS.put("FULL",ModBlocks.BLOCKS.register(name+"_cluster", () -> new BaseClusterBlock(7,3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER)
+                .lightLevel((p_152629_) -> 5), this.color,4)));
         BLOCKS.put("BUDDING",ModBlocks.BLOCKS.register("budding_"+name, () -> new BaseBuddingBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST),this.color)));
 
         clusters.add(BLOCKS.get("SMALL"));

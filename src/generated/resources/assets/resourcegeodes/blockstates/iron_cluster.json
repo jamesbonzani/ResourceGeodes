@@ -1,0 +1,264 @@
+{
+  "variants": {
+    "facing=down,size=0,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=0,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=0,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=0,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=0,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=0,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=1,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=1,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=1,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=1,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=1,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=1,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=2,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=2,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=2,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=2,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=2,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=2,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=3,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=3,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=3,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=3,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=3,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=3,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=4,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=4,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=4,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=4,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=4,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=4,waterlogged=false": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=0,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=0,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=0,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=0,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=0,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=0,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=1,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=1,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=1,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=1,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=1,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=1,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=2,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=2,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=2,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=2,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=2,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=2,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=3,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=3,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=3,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=3,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=3,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=3,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,size=4,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 180
+    },
+    "facing=up,size=4,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster"
+    },
+    "facing=north,size=4,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90
+    },
+    "facing=south,size=4,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west,size=4,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 270
+    },
+    "facing=east,size=4,waterlogged=true": {
+      "model": "resourcegeodes:block/full_cluster",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

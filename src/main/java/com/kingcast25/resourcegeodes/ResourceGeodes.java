@@ -7,6 +7,9 @@ import com.kingcast25.resourcegeodes.content.geode.GeodeType;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -37,6 +40,8 @@ public class ResourceGeodes
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public static final String MOD_ID = "resourcegeodes";
+
+    public static final CreativeModeTab MOD_TAB = new ModTab("resource_geodes");
 
     public ResourceGeodes()
     {
@@ -136,4 +141,18 @@ public class ResourceGeodes
 
 
 
+}
+
+
+
+class ModTab extends CreativeModeTab {
+
+    public ModTab(String label) {
+        super(label);
+    }
+
+    @Override
+    public ItemStack makeIcon() {
+        return new ItemStack(Items.AMETHYST_CLUSTER);
+    }
 }

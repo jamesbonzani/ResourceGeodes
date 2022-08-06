@@ -1,6 +1,7 @@
 package com.kingcast25.resourcegeodes.content.block;
 
 
+
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.block.custom.CrystalSensorBlock;
 import com.kingcast25.resourcegeodes.content.geode.GeodeType;
@@ -29,20 +30,24 @@ import java.util.List;
 public class ModBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,ResourceGeodes.MOD_ID);
+
+    public static List<Item> ITEMS = new ArrayList<Item>();
     public static HashMap<String,GeodeType> geodes = new HashMap<String, GeodeType>();
 
 
     public static void blockSetup(){
 
-         geodes.put("iron",new GeodeType("iron", FastColor.ARGB32.color(255,227, 210, 163), Items.RAW_IRON));
-         geodes.put("gold",new GeodeType("gold", FastColor.ARGB32.color(255,255, 203, 48), Items.RAW_GOLD));
+         geodes.put("iron",new GeodeType("iron", FastColor.ARGB32.color(255,227, 210, 163), 1, Items.RAW_IRON));
+         geodes.put("gold",new GeodeType("gold", FastColor.ARGB32.color(255,255, 203, 48), 2, Items.RAW_GOLD));
+         geodes.put("copper",new GeodeType("copper", FastColor.ARGB32.color(255,255, 119, 41), 1, Items.RAW_COPPER));
+         geodes.put("diamond",new GeodeType("diamond", FastColor.ARGB32.color(255,63, 252, 243), 3, Items.DIAMOND));
 
 
         ResourceGeodes.logInfo(geodes.size() + " Geodes Created");
 
     }
 
-    public static final RegistryObject<Block> SENSOR = BLOCKS.register("crystal_sensor", () -> new CrystalSensorBlock(BlockBehaviour.Properties.copy(Blocks.OBSERVER)));
+    //public static final RegistryObject<Block> SENSOR = BLOCKS.register("crystal_sensor", () -> new CrystalSensorBlock(BlockBehaviour.Properties.copy(Blocks.OBSERVER)));
 
 
 
@@ -61,9 +66,10 @@ public class ModBlocks {
         final IForgeRegistry<Item> registry = event.getRegistry();
 
         BLOCKS.getEntries().stream().map(RegistryObject::get).forEach( (block) -> {
-            final Item.Properties properties = new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS);
+            final Item.Properties properties = new Item.Properties().tab(ResourceGeodes.MOD_TAB);
             final BlockItem blockItem = new BlockItem(block, properties);
             blockItem.setRegistryName(block.getRegistryName());
+            ITEMS.add(blockItem);
             registry.register(blockItem);
         });
     }
