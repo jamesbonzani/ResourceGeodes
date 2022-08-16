@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "resourcegeodes:small_diamond_bud",
+    "resourcegeodes:medium_diamond_bud",
+    "resourcegeodes:large_diamond_bud",
+    "resourcegeodes:full_diamond_cluster",
+    "resourcegeodes:budding_diamond",
+    "resourcegeodes:small_emerald_bud",
+    "resourcegeodes:medium_emerald_bud",
+    "resourcegeodes:large_emerald_bud",
+    "resourcegeodes:full_emerald_cluster",
+    "resourcegeodes:budding_emerald"
+  ]
+}

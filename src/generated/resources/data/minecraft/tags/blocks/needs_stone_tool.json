@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "resourcegeodes:small_iron_bud",
+    "resourcegeodes:medium_iron_bud",
+    "resourcegeodes:large_iron_bud",
+    "resourcegeodes:full_iron_cluster",
+    "resourcegeodes:budding_iron",
+    "resourcegeodes:small_coal_bud",
+    "resourcegeodes:medium_coal_bud",
+    "resourcegeodes:large_coal_bud",
+    "resourcegeodes:full_coal_cluster",
+    "resourcegeodes:budding_coal",
+    "resourcegeodes:small_copper_bud",
+    "resourcegeodes:medium_copper_bud",
+    "resourcegeodes:large_copper_bud",
+    "resourcegeodes:full_copper_cluster",
+    "resourcegeodes:budding_copper",
+    "resourcegeodes:crystal_sensor"
+  ]
+}
