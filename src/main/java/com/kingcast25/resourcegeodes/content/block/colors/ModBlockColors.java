@@ -34,10 +34,10 @@ public class ModBlockColors {
        Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
        while (geodeIt.hasNext()){
            GeodeType currGeode = geodeIt.next();
-           HashMap<String,RegistryObject<Block>> map = currGeode.getBLOCKS();
+
 
            event.getBlockColors().register((unknown, lightReader, pos, unknown2) -> currGeode.getColor(),
-                   map.get("SMALL").get(),map.get("MEDIUM").get(),map.get("LARGE").get(),map.get("FULL").get(),map.get("BUDDING").get());
+                  currGeode.SMALL.get(),currGeode.MEDIUM.get(),currGeode.LARGE.get(),currGeode.FULL.get(),currGeode.BUDDING.get() );
         }
     }
 
@@ -52,8 +52,7 @@ public class ModBlockColors {
         Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
         while (geodeIt.hasNext()) {
             GeodeType currGeode = geodeIt.next();
-            HashMap<String, RegistryObject<Block>> map = currGeode.getBLOCKS();
-            itemColors.register(itemBlockColourHandler, map.get("SMALL").get(), map.get("MEDIUM").get(), map.get("LARGE").get(), map.get("FULL").get(), map.get("BUDDING").get());
+            itemColors.register(itemBlockColourHandler,   currGeode.SMALL.get(),currGeode.MEDIUM.get(),currGeode.LARGE.get(),currGeode.FULL.get(),currGeode.BUDDING.get() );
 
         }
 

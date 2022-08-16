@@ -1,14 +1,16 @@
 package com.kingcast25.resourcegeodes.client.event;
 
-import com.ibm.icu.impl.coll.CollationRoot;
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.block.colors.ModBlockColors;
+import com.kingcast25.resourcegeodes.content.block.entity.ModBlockEntities;
+import com.kingcast25.resourcegeodes.client.render.BuddingBlockBER;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = ResourceGeodes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEventsHandler {
 
     @SubscribeEvent
@@ -19,7 +21,18 @@ public class ClientEventsHandler {
 
     @SubscribeEvent
     public static void onColorHandlerEvent$Item(ColorHandlerEvent.Item event) {
-        ResourceGeodes.logInfo("Registering Item Colors");
+       ResourceGeodes.logInfo("Registering Item Colors");
       ModBlockColors.onItemColorsInit(event.getBlockColors(), event.getItemColors());
+    }
+
+
+    @SubscribeEvent
+    public static void register(final EntityRenderersEvent.RegisterRenderers event){
+
+        ResourceGeodes.logInfo("Registering BERs");
+        event.registerBlockEntityRenderer(ModBlockEntities.BUDDING_BLOCK_ENTITY.get(), BuddingBlockBER::new);
+
+
+
     }
 }

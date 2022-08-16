@@ -1,261 +1,53 @@
 {
   "variants": {
-    "facing=down,size=0,waterlogged=false": {
+    "facing=down,waterlogged=false": {
       "model": "resourcegeodes:block/large_bud",
       "x": 180
     },
-    "facing=up,size=0,waterlogged=false": {
+    "facing=up,waterlogged=false": {
       "model": "resourcegeodes:block/large_bud"
     },
-    "facing=north,size=0,waterlogged=false": {
+    "facing=north,waterlogged=false": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90
     },
-    "facing=south,size=0,waterlogged=false": {
+    "facing=south,waterlogged=false": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90,
       "y": 180
     },
-    "facing=west,size=0,waterlogged=false": {
+    "facing=west,waterlogged=false": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90,
       "y": 270
     },
-    "facing=east,size=0,waterlogged=false": {
+    "facing=east,waterlogged=false": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90,
       "y": 90
     },
-    "facing=down,size=1,waterlogged=false": {
+    "facing=down,waterlogged=true": {
       "model": "resourcegeodes:block/large_bud",
       "x": 180
     },
-    "facing=up,size=1,waterlogged=false": {
+    "facing=up,waterlogged=true": {
       "model": "resourcegeodes:block/large_bud"
     },
-    "facing=north,size=1,waterlogged=false": {
+    "facing=north,waterlogged=true": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90
     },
-    "facing=south,size=1,waterlogged=false": {
+    "facing=south,waterlogged=true": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90,
       "y": 180
     },
-    "facing=west,size=1,waterlogged=false": {
+    "facing=west,waterlogged=true": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90,
       "y": 270
     },
-    "facing=east,size=1,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=2,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=2,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=2,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=2,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=2,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=2,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=3,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=3,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=3,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=3,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=3,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=3,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=4,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=4,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=4,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=4,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=4,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=4,waterlogged=false": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=0,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=0,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=0,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=0,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=0,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=0,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=1,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=1,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=1,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=1,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=1,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=1,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=2,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=2,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=2,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=2,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=2,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=2,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=3,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=3,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=3,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=3,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=3,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=3,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 90
-    },
-    "facing=down,size=4,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 180
-    },
-    "facing=up,size=4,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud"
-    },
-    "facing=north,size=4,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90
-    },
-    "facing=south,size=4,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 180
-    },
-    "facing=west,size=4,waterlogged=true": {
-      "model": "resourcegeodes:block/large_bud",
-      "x": 90,
-      "y": 270
-    },
-    "facing=east,size=4,waterlogged=true": {
+    "facing=east,waterlogged=true": {
       "model": "resourcegeodes:block/large_bud",
       "x": 90,
       "y": 90

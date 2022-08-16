@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#I#",
+    "IRI",
+    "#I#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "resourcegeodes:catalyst_1"
+    }
+  },
+  "result": {
+    "item": "resourcegeodes:catalyst_2",
+    "count": 1
+  }
+}

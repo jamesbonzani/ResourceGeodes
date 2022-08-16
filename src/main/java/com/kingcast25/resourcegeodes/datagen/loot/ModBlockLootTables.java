@@ -3,6 +3,7 @@ package com.kingcast25.resourcegeodes.datagen.loot;
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.block.ModBlocks;
 import com.kingcast25.resourcegeodes.content.geode.GeodeType;
+import com.sun.jna.platform.win32.OaIdl;
 import net.minecraft.advancements.critereon.BlockPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.loot.BlockLoot;
@@ -34,18 +35,19 @@ public class ModBlockLootTables extends BlockLoot {
         while (geodeIt.hasNext()) {
             GeodeType currGeode = geodeIt.next();
             ResourceGeodes.logInfo("Adding Loot Tables for "+ currGeode.name + " Geode");
-            HashMap<String, RegistryObject<Block>> map = currGeode.getBLOCKS();
-            this.add(map.get("BUDDING").get(), noDrop());
-            this.dropWhenSilkTouch(map.get("SMALL").get());
-            this.dropWhenSilkTouch(map.get("MEDIUM").get());
-            this.dropWhenSilkTouch(map.get("LARGE").get());
-            this.dropWhenSilkTouch(map.get("FULL").get());
-            this.add(map.get("FULL").get(), (block) -> {
-                return createSilkTouchDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(currGeode.clusterDrop).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F-currGeode.tier)))
-                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))));
-            });
+            this.add(currGeode.BUDDING.get(), noDrop());
+            this.dropWhenSilkTouch(currGeode.SMALL.get());
+            this.dropWhenSilkTouch(currGeode.MEDIUM.get());
+            this.dropWhenSilkTouch(currGeode.LARGE.get());
+            this.dropWhenSilkTouch(currGeode.FULL.get());
+            this.add(currGeode.FULL.get(), (block) -> createSilkTouchDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(currGeode.clusterDrop))
+                    .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 4-currGeode.tier))));
 
         }
+
+        this.dropSelf(ModBlocks.SENSOR.get());
+
+
 
     }
 

@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=down,powered=false": {
+      "model": "resourcegeodes:block/sensor",
+      "x": 90
+    },
+    "facing=down,powered=true": {
+      "model": "resourcegeodes:block/sensor_on",
+      "x": 90
+    },
+    "facing=east,powered=false": {
+      "model": "resourcegeodes:block/sensor",
+      "y": 90
+    },
+    "facing=east,powered=true": {
+      "model": "resourcegeodes:block/sensor_on",
+      "y": 90
+    },
+    "facing=north,powered=false": {
+      "model": "resourcegeodes:block/sensor"
+    },
+    "facing=north,powered=true": {
+      "model": "resourcegeodes:block/sensor_on"
+    },
+    "facing=south,powered=false": {
+      "model": "resourcegeodes:block/sensor",
+      "y": 180
+    },
+    "facing=south,powered=true": {
+      "model": "resourcegeodes:block/sensor_on",
+      "y": 180
+    },
+    "facing=up,powered=false": {
+      "model": "resourcegeodes:block/sensor",
+      "x": 270
+    },
+    "facing=up,powered=true": {
+      "model": "resourcegeodes:block/sensor_on",
+      "x": 270
+    },
+    "facing=west,powered=false": {
+      "model": "resourcegeodes:block/sensor",
+      "y": 270
+    },
+    "facing=west,powered=true": {
+      "model": "resourcegeodes:block/sensor_on",
+      "y": 270
+    }
+  }
+}

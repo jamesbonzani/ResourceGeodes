@@ -25,19 +25,13 @@
                   }
                 }
               ],
-              "name": "resourcegeodes:iron_cluster"
+              "name": "resourcegeodes:full_emerald_cluster"
             },
             {
               "type": "minecraft:item",
               "functions": [
                 {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "min": 1.0,
-                    "max": 4.0
-                  },
-                  "add": false
+                  "function": "minecraft:explosion_decay"
                 },
                 {
                   "function": "minecraft:apply_bonus",
@@ -46,12 +40,9 @@
                   "parameters": {
                     "bonusMultiplier": 1
                   }
-                },
-                {
-                  "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraft:raw_iron"
+              "name": "minecraft:emerald"
             }
           ]
         }

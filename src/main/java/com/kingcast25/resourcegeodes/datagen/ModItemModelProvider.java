@@ -3,6 +3,7 @@ package com.kingcast25.resourcegeodes.datagen;
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.block.custom.BaseBuddingBlock;
 import com.kingcast25.resourcegeodes.content.block.custom.BaseClusterBlock;
+import com.kingcast25.resourcegeodes.content.block.custom.CrystalSensorBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -25,8 +26,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         super(generator, ResourceGeodes.MOD_ID, existingFileHelper);
     }
 
+
+
     @Override
     protected void registerModels() {
+
         Collection<Item> items = ForgeRegistries.ITEMS.getValues();
         Collection<Item> modItems = new ArrayList<>();
         for (Item i : items){
@@ -37,13 +41,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         for (Item entry : modItems) {
             if (entry instanceof BlockItem blockItem) {
                 if (blockItem.getBlock() instanceof BaseBuddingBlock){
-                    block(blockItem);
+                   block(blockItem);
                 } else if (blockItem.getBlock() instanceof BaseClusterBlock) {
-                    block(blockItem);
-                }
+                   block(blockItem);
+                } else if (blockItem.getBlock() instanceof CrystalSensorBlock)
+                   sensor(blockItem);
             }
         }
+
+
+
     }
+
 
     protected ItemModelBuilder block(BlockItem blockItem) {
         String fullName = blockItem.getBlock().getRegistryName().getPath();
@@ -77,6 +86,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
 
+    protected ItemModelBuilder sensor(Item item){
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation(ResourceGeodes.MOD_ID, "block/sensor"));
+    }
 
 
 

@@ -20,26 +20,33 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ResourceGeodes.logInfo("Blockstate Provider Created");
     }
 
-    @Override
+  @Override
     protected void registerStatesAndModels() {
+
         ResourceGeodes.logInfo("Registering states and models");
         Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
         while (geodeIt.hasNext()) {
             GeodeType currGeode = geodeIt.next();
-            HashMap<String, RegistryObject<Block>> map = currGeode.getBLOCKS();
 
-            simpleBlock(map.get("BUDDING").get(), models().getExistingFile(models().modLoc("budding_block")));
-            directionalBlock(map.get("SMALL").get(), models().getExistingFile(models().modLoc("small_bud")));
-            directionalBlock(map.get("MEDIUM").get(), models().getExistingFile(models().modLoc("medium_bud")));
-            directionalBlock(map.get("LARGE").get(), models().getExistingFile(models().modLoc("large_bud")));
-            directionalBlock(map.get("FULL").get(), models().getExistingFile(models().modLoc("full_cluster")));
+            simpleBlock(currGeode.BUDDING.get(), models().getExistingFile(models().modLoc("budding_block")));
+            directionalBlock(currGeode.SMALL.get(), models().getExistingFile(models().modLoc("small_bud")));
+            directionalBlock(currGeode.MEDIUM.get(), models().getExistingFile(models().modLoc("medium_bud")));
+            directionalBlock(currGeode.LARGE.get(), models().getExistingFile(models().modLoc("large_bud")));
+            directionalBlock(currGeode.FULL.get(), models().getExistingFile(models().modLoc("full_cluster")));
 
+
+            }
+
+            
 
         }
+
+
+
     }
 
 
 
 
 
-}
+

@@ -1,0 +1,6 @@
+{
+  "parent": "resourcegeodes:block/sensor",
+  "textures": {
+    "bottom": "resourcegeodes:block/sensor_back_on"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#I#",
+    "IRI",
+    "#I#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_block"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "R": {
+      "item": "resourcegeodes:catalyst_2"
+    }
+  },
+  "result": {
+    "item": "resourcegeodes:catalyst_3",
+    "count": 1
+  }
+}

@@ -1,9 +1,12 @@
 package com.kingcast25.resourcegeodes;
 
 
+import com.kingcast25.resourcegeodes.config.ResourceGeodesClientConfigs;
+import com.kingcast25.resourcegeodes.config.ResourceGeodesCommonConfigs;
 import com.kingcast25.resourcegeodes.content.block.ModBlocks;
-import com.kingcast25.resourcegeodes.content.block.custom.BaseClusterBlock;
+import com.kingcast25.resourcegeodes.content.block.entity.ModBlockEntities;
 import com.kingcast25.resourcegeodes.content.geode.GeodeType;
+import com.kingcast25.resourcegeodes.content.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -18,17 +21,16 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.stream.Collectors;
 
@@ -43,15 +45,20 @@ public class ResourceGeodes
 
     public static final CreativeModeTab MOD_TAB = new ModTab("resource_geodes");
 
+
     public ResourceGeodes()
     {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ResourceGeodesCommonConfigs.SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ResourceGeodesClientConfigs.SPEC);
+
         LOGGER.info("Registering Blocks");
         ModBlocks.blockSetup();
         ModBlocks.register(bus);
+        ModItems.register(bus);
 
-
+        ModBlockEntities.register(bus);
 
         // Register the setup method for modloading
         bus.addListener(this::setup);
@@ -71,6 +78,8 @@ public class ResourceGeodes
 
 
     }
+
+
 
     private void setup(final FMLCommonSetupEvent event)
     {
@@ -95,19 +104,17 @@ public class ResourceGeodes
 
 
     public void clientLoad(final FMLClientSetupEvent event) {
-
         Iterator<GeodeType> geodeIt = ModBlocks.geodes.values().iterator();
+        LOGGER.info("Setting Render Layers for Clusters");
         while (geodeIt.hasNext()){
             GeodeType currGeode = geodeIt.next();
-            HashMap<String,RegistryObject<Block>> map = currGeode.getBLOCKS();
-            LOGGER.info("Setting Render Layers for Clusters");
-            ItemBlockRenderTypes.setRenderLayer(map.get("SMALL").get(),RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(map.get("MEDIUM").get(),RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(map.get("LARGE").get(),RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(map.get("FULL").get(),RenderType.cutout());
+
+            ItemBlockRenderTypes.setRenderLayer(currGeode.SMALL.get(),RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(currGeode.MEDIUM.get(),RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(currGeode.LARGE.get(),RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(currGeode.FULL.get(),RenderType.cutoutMipped());
 
             }
-        LOGGER.info("Client Loading");
 
     }
 
@@ -134,7 +141,9 @@ public class ResourceGeodes
     }
 
     public static void logInfo(String text){
-        LOGGER.info(text);
+        if (ResourceGeodesCommonConfigs.DEBUG_MESSAGES.get()){
+            LOGGER.info(text);
+        }
     }
 
 

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#I#",
+    "IRI",
+    "#I#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:emerald"
+    },
+    "R": {
+      "item": "resourcegeodes:catalyst_3"
+    }
+  },
+  "result": {
+    "item": "resourcegeodes:catalyst_4",
+    "count": 1
+  }
+}

@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 public class ModRenderTypes {
     public static void renderTypes(Consumer<Map<Block, RenderType>> mapConsumer) {
-        Map<Block, RenderType> map = new HashMap<>();
+        //Map<Block, RenderType> map = new HashMap<>();
 
 
 

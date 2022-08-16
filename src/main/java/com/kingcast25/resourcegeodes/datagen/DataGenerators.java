@@ -17,6 +17,7 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
+
         ResourceGeodes.logInfo("Generating Data Files");
         generator.addProvider(new ModLootTableProvider(generator));
         generator.addProvider(new ModItemModelProvider(generator, existingFileHelper));
@@ -25,6 +26,7 @@ public class DataGenerators {
         generator.addProvider(new ModTagProvider(generator,existingFileHelper));
 
         generator.run();
+
     }
 
 
