@@ -6,15 +6,22 @@ import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.block.custom.CrystalSensorBlock;
 import com.kingcast25.resourcegeodes.content.geode.GeodeType;
 
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagLoader;
 import net.minecraft.util.FastColor;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.BarrierBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ForgeBlockTagsProvider;
+import net.minecraftforge.common.data.ForgeRegistryTagsProvider;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,7 +31,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.tags.ITagManager;
+import org.lwjgl.system.CallbackI;
 
+import javax.swing.text.html.parser.TagElement;
 import java.util.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -53,7 +63,7 @@ public class ModBlocks {
 
 
         if (ModList.get().isLoaded("create")){
-            geodes.put("zinc", new GeodeType("zinc", FastColor.ARGB32.color(255,5, 168, 21), 2,
+            geodes.put("zinc", new GeodeType("zinc", FastColor.ARGB32.color(255,177, 233, 192), 2,
                     ForgeRegistries.ITEMS.getValue(new ResourceLocation("create", "raw_zinc"))));
         }
 
@@ -66,6 +76,7 @@ public class ModBlocks {
 
 
 
+    public static final RegistryObject<Block> EMPTY = BLOCKS.register("empty_block", () -> new BarrierBlock(BlockBehaviour.Properties.copy(Blocks.BARRIER)));
 
 
 
@@ -81,12 +92,17 @@ public class ModBlocks {
    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
         final IForgeRegistry<Item> registry = event.getRegistry();
 
+
+
+
         BLOCKS.getEntries().stream().map(RegistryObject::get).forEach( (block) -> {
-            final Item.Properties properties = new Item.Properties().tab(ResourceGeodes.MOD_TAB);
-            final BlockItem blockItem = new BlockItem(block, properties);
-            blockItem.setRegistryName(block.getRegistryName());
-            ITEMS.add(blockItem);
-            registry.register(blockItem);
+            if (!(block instanceof BarrierBlock)) {
+                final Item.Properties properties = new Item.Properties().tab(ResourceGeodes.MOD_TAB);
+                final BlockItem blockItem = new BlockItem(block, properties);
+                blockItem.setRegistryName(block.getRegistryName());
+                ITEMS.add(blockItem);
+                registry.register(blockItem);
+            }
         });
     }
 

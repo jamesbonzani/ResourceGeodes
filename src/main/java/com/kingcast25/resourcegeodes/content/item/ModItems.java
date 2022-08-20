@@ -3,8 +3,8 @@ package com.kingcast25.resourcegeodes.content.item;
 
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.item.custom.CatalystItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import com.kingcast25.resourcegeodes.content.item.custom.TierViewerItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,6 +32,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> CATALYST_5 = ITEMS.register("catalyst_5", () ->
             new CatalystItem(new Item.Properties().tab(ResourceGeodes.MOD_TAB).stacksTo(1)));
+
+
+
+    public static final RegistryObject<Item> TIER_VIEWER = ITEMS.register("tier_viewer", TierViewerItem::new);
 
 
 

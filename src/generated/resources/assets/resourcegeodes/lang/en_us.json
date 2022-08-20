@@ -85,5 +85,11 @@
   "item.resourcegeodes.small_iron_bud": "Small Iron Bud",
   "item.resourcegeodes.small_lapis_bud": "Small Lapis Bud",
   "item.resourcegeodes.small_redstone_bud": "Small Redstone Bud",
-  "itemGroup.resourcegeodes.resource_geodes": "Resource Geodes"
+  "item.resourcegeodes.tier_viewer": "Tier Viewer",
+  "itemGroup.resource_geodes": "Resource Geodes",
+  "block.resourcegeodes.budding_zinc": "Budding Zinc",
+  "block.resourcegeodes.full_zinc_cluster": "Zinc Cluster",
+  "block.resourcegeodes.large_zinc_bud": "Large Zinc Bud",
+  "block.resourcegeodes.medium_zinc_bud": "Medium Zinc Bud",
+  "block.resourcegeodes.small_zinc_bud": "Small Zinc Bud"
 }

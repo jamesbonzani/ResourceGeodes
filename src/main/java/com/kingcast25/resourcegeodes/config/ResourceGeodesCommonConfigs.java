@@ -41,7 +41,7 @@ public class ResourceGeodesCommonConfigs {
         TIER_ONE_MIN_Y = BUILDER.comment("Tier 1 Geode Minimum Y Level").defineInRange("Tier 1 Geode Minimum Y", 0, -64, 320);
         TIER_ONE_MAX_Y = BUILDER.comment("Tier 1 Geode Maximum Y Level").defineInRange("Tier 1 Geode Maximum Y", 128, -64, 320);
         TIER_TWO_MIN_Y = BUILDER.comment("Tier 2 Geode Minimum Y Level").defineInRange("Tier 2 Geode Minimum Y", -32, -64, 320);
-        TIER_TWO_MAX_Y = BUILDER.comment("Tier 2 Geode Maximum Y Level").defineInRange("Tier 2 Geode Maximum Y", 64, -64, 320);
+        TIER_TWO_MAX_Y = BUILDER.comment("Tier 2 Geode Maximum Y Level").defineInRange("Tier 2 Geode Maximum Y", 32, -64, 320);
         TIER_THREE_MIN_Y = BUILDER.comment("Tier 3 Geode Minimum Y Level").defineInRange("Tier 3 Geode Minimum Y", -64, -64, 320);
         TIER_THREE_MAX_Y = BUILDER.comment("Tier 3 Geode Maximum Y Level").defineInRange("Tier 3 Geode Maximum Y", 0, -64, 320);
         BUILDER.pop();

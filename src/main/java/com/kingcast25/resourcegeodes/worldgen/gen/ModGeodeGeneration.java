@@ -1,5 +1,6 @@
 package com.kingcast25.resourcegeodes.worldgen.gen;
 
+import com.kingcast25.resourcegeodes.content.block.ModBlocks;
 import com.kingcast25.resourcegeodes.worldgen.feature.ModPlacedFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.biome.Biome;
@@ -22,6 +23,9 @@ public class ModGeodeGeneration {
         base.add(ModPlacedFeatures.GOLD_GEODE_PLACED);
         base.add(ModPlacedFeatures.LAPIS_GEODE_PLACED);
         base.add(ModPlacedFeatures.DIAMOND_GEODE_PLACED);
+        if (ModBlocks.geodes.get("zinc") != null){
+            base.add(ModPlacedFeatures.ZINC_GEODE_PLACED);
+        }
 
         if (event.getCategory() == Biome.BiomeCategory.MOUNTAIN) {
             base.add(ModPlacedFeatures.EMERALD_GEODE_PLACED);

@@ -59,7 +59,10 @@ public class CrystalSensorBlock extends DirectionalBlock {
 
     @Override
     public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
-        return direction.equals(state.getValue(FACING).getOpposite());
+        if (direction != null){
+            return direction.equals(level.getBlockState(pos).getValue(FACING));
+        }
+        return false;
     }
 
     public BlockState rotate(BlockState p_55115_, Rotation p_55116_) {

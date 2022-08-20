@@ -1,6 +1,7 @@
 package com.kingcast25.resourcegeodes.worldgen.feature;
 
 import com.kingcast25.resourcegeodes.config.ResourceGeodesCommonConfigs;
+import com.kingcast25.resourcegeodes.content.block.ModBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -59,6 +60,16 @@ public class ModPlacedFeatures {
             InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(TIER_2_MIN_Y),
                     VerticalAnchor.absolute(TIER_2_MAX_Y)), BiomeFilter.biome());
 
+    public static Holder<PlacedFeature> ZINC_GEODE_PLACED = null;
+
+    static{
+        if (ModBlocks.geodes.get("zinc") != null){
+            ZINC_GEODE_PLACED = PlacementUtils.register("zinc_geode_placed",
+                    ModConfiguredFeatures.ZINC_GEODE, RarityFilter.onAverageOnceEvery(MidTierRate),
+                    InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(TIER_2_MIN_Y),
+                            VerticalAnchor.absolute(TIER_2_MAX_Y)), BiomeFilter.biome());
+        }
+    }
 
 
 

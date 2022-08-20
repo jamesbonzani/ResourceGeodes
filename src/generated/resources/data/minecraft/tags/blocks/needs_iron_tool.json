@@ -15,6 +15,11 @@
     "resourcegeodes:medium_redstone_bud",
     "resourcegeodes:large_redstone_bud",
     "resourcegeodes:full_redstone_cluster",
-    "resourcegeodes:budding_redstone"
+    "resourcegeodes:budding_redstone",
+    "resourcegeodes:budding_zinc",
+    "resourcegeodes:full_zinc_cluster",
+    "resourcegeodes:large_zinc_bud",
+    "resourcegeodes:medium_zinc_bud",
+    "resourcegeodes:small_zinc_bud"
   ]
 }

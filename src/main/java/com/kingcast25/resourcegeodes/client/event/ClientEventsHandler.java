@@ -1,9 +1,9 @@
 package com.kingcast25.resourcegeodes.client.event;
 
 import com.kingcast25.resourcegeodes.ResourceGeodes;
+import com.kingcast25.resourcegeodes.client.render.BuddingBlockBER;
 import com.kingcast25.resourcegeodes.content.block.colors.ModBlockColors;
 import com.kingcast25.resourcegeodes.content.block.entity.ModBlockEntities;
-import com.kingcast25.resourcegeodes.client.render.BuddingBlockBER;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -31,8 +31,7 @@ public class ClientEventsHandler {
 
         ResourceGeodes.logInfo("Registering BERs");
         event.registerBlockEntityRenderer(ModBlockEntities.BUDDING_BLOCK_ENTITY.get(), BuddingBlockBER::new);
-
-
-
     }
+
+
 }

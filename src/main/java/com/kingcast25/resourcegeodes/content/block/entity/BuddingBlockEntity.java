@@ -20,6 +20,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
+
 
 public class BuddingBlockEntity extends BlockEntity {
 
@@ -29,6 +31,8 @@ public class BuddingBlockEntity extends BlockEntity {
     public static int baseRate = ResourceGeodesCommonConfigs.BASE_GROWTH_RATE.get();
     public static int tierRate = ResourceGeodesCommonConfigs.TIER_GROWTH_RATE.get();
 
+
+    public Color oldColor = Color.white;
 
 
 
@@ -90,7 +94,7 @@ public class BuddingBlockEntity extends BlockEntity {
     @Override
     protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
-       tag.putInt("growthTier", this.getGrowthTier());
+        tag.putInt("growthTier", this.getGrowthTier());
     }
 
     @Override

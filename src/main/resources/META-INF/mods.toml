@@ -35,6 +35,12 @@ authors="" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 Adds new Geode variants to allow renewable resource harvesting.
+Tier 1 Geodes: Iron, Coal, Copper
+Tier 2 Geodes: Lapis, Redstone, Gold
+Tier 3 Geodes: Diamond, Emerald (only spawn in Mountain Biomes)
+
+Resource Buds can be upgraded with 5 tiers of catalysts to increase growth rate.
+
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.resourcegeodes]] #optional

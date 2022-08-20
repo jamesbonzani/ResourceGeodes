@@ -46,15 +46,17 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.SENSOR.get(), "Crystal Sensor");
 
-        add(ModItems.CATALYST_1.get(), "Tier 1 Catalyst");
-        add(ModItems.CATALYST_2.get(), "Tier 2 Catalyst");
-        add(ModItems.CATALYST_3.get(), "Tier 3 Catalyst");
-        add(ModItems.CATALYST_4.get(), "Tier 4 Catalyst");
-        add(ModItems.CATALYST_5.get(), "Tier 5 Catalyst");
+        add(ModItems.CATALYST_1.get(), "Tier 1 Growth Catalyst");
+        add(ModItems.CATALYST_2.get(), "Tier 2 Growth Catalyst");
+        add(ModItems.CATALYST_3.get(), "Tier 3 Growth Catalyst");
+        add(ModItems.CATALYST_4.get(), "Tier 4 Growth Catalyst");
+        add(ModItems.CATALYST_5.get(), "Tier 5 Growth Catalyst");
+
+        add(ModItems.TIER_VIEWER.get(), "Tier Viewer");
 
 
 
-        add("itemGroup.resourcegeodes.resource_geodes", "Resource Geodes");
+        add("itemGroup.resource_geodes", "Resource Geodes");
 
 
 

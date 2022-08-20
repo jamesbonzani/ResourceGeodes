@@ -2,35 +2,18 @@ package com.kingcast25.resourcegeodes.client.render;
 
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.config.ResourceGeodesClientConfigs;
-import com.kingcast25.resourcegeodes.content.block.ModBlocks;
 import com.kingcast25.resourcegeodes.content.block.entity.BuddingBlockEntity;
-import com.kingcast25.resourcegeodes.content.block.entity.ModBlockEntities;
+import com.kingcast25.resourcegeodes.content.item.custom.TierViewerItem;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.BufferBuilder;
-import com.mojang.blaze3d.vertex.DefaultedVertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Matrix4f;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.geom.builders.UVPair;
 import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.debug.DebugRenderer;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.event.RenderBlockOverlayEvent;
-import org.lwjgl.system.CallbackI;
 
 import java.awt.*;
 
@@ -46,7 +29,7 @@ public class BuddingBlockBER implements BlockEntityRenderer<BuddingBlockEntity> 
     }
 
 
-    public Color oldColor = Color.white;
+
 
 
     @Override
@@ -54,26 +37,41 @@ public class BuddingBlockBER implements BlockEntityRenderer<BuddingBlockEntity> 
         //ResourceGeodes.logInfo("Rendering Budding Block Entity");
         //ResourceGeodes.logInfo(ent.getBlockPos().toString());
 
+        for (ItemStack i : Minecraft.getInstance().player.getHandSlots()) {
+            if (i.getItem() instanceof TierViewerItem) {
+                renderTiers(ent, partialTicks, stack, source, light, overlay);
+            }
+
+        }
+    }
+
+
+
+
+
+
+    private void renderTiers(BuddingBlockEntity ent, float partialTicks, PoseStack stack, MultiBufferSource source, int light, int overlay){
         if (shouldRenderTiers) {
-            if (ent.getGrowthTier() > 0) {
-                Color color = Color.white;
+            Color color = new Color(ResourceGeodesClientConfigs.BASE_COLOR.get());
 
                 switch (ent.getGrowthTier()) {
                     case 1:
                         color = new Color(ResourceGeodesClientConfigs.TIER_1_COLOR.get());
+                        ResourceGeodes.logInfo(color.toString());
                         break;
                     case 2:
                         color = new Color(ResourceGeodesClientConfigs.TIER_2_COLOR.get());
                         break;
                     case 3:
                         color = new Color(ResourceGeodesClientConfigs.TIER_3_COLOR.get());
+                        ResourceGeodes.logInfo(color.toString());
                         break;
                     case 4:
                         color = new Color(ResourceGeodesClientConfigs.TIER_4_COLOR.get());
                         break;
                     case 5:
-                        color = cycle(oldColor);
-                        this.oldColor = color;
+                        color = cycle(ent.oldColor);
+                        ent.oldColor = color;
                         break;
                 }
 
@@ -86,9 +84,11 @@ public class BuddingBlockBER implements BlockEntityRenderer<BuddingBlockEntity> 
                 float b = color.getBlue();
                 float a = color.getAlpha();
 
+
+
                 AABB box = new AABB(0, 0, 0, 1, 1, 1)
-                        .move(x, y, z)
-                        .inflate(0.005);
+                        .move(x, y, z);
+                //.inflate(0.005);
 
                 //Math.sin((ent.getLevel().getGameTime() + partialTicks)*10%360)
 
@@ -100,10 +100,8 @@ public class BuddingBlockBER implements BlockEntityRenderer<BuddingBlockEntity> 
                 LevelRenderer.renderLineBox(stack, buffer, box, r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
                 stack.popPose();
             }
-        }
+
     }
-
-
 
 
     public static Minecraft MC = Minecraft.getInstance();
@@ -131,8 +129,8 @@ public class BuddingBlockBER implements BlockEntityRenderer<BuddingBlockEntity> 
 
     public Color cycle(Color oldColor){
         float[] values = Color.RGBtoHSB(oldColor.getRed(), oldColor.getGreen(), oldColor.getBlue(), null);
-        float hue = values[0] + ResourceGeodesClientConfigs.CYCLE_SPEED.get().floatValue();
-        Color newColor = Color.getHSBColor(hue, 1, 1);
+        float hue = values[0] + ResourceGeodesClientConfigs.CYCLE_SPEED.get()/3600f;
+        Color newColor = Color.getHSBColor(hue, 0.5f, 1f);
         ResourceGeodes.logInfo(String.valueOf(newColor));
         return newColor;
     }

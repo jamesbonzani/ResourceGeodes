@@ -41,6 +41,11 @@
     "resourcegeodes:large_emerald_bud",
     "resourcegeodes:full_emerald_cluster",
     "resourcegeodes:budding_emerald",
-    "resourcegeodes:crystal_sensor"
+    "resourcegeodes:crystal_sensor",
+    "resourcegeodes:budding_zinc",
+    "resourcegeodes:small_zinc_bud",
+    "resourcegeodes:medium_zinc_bud",
+    "resourcegeodes:large_zinc_bud",
+    "resourcegeodes:full_zinc_cluster"
   ]
 }

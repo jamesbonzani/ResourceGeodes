@@ -2,6 +2,7 @@ package com.kingcast25.resourcegeodes.content.block.entity;
 
 import com.kingcast25.resourcegeodes.ResourceGeodes;
 import com.kingcast25.resourcegeodes.content.block.ModBlocks;
+import com.kingcast25.resourcegeodes.content.block.custom.BaseBuddingBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -14,7 +15,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.Set;
+import java.util.function.Supplier;
 
 public class ModBlockEntities {
 
@@ -31,8 +34,9 @@ public class ModBlockEntities {
                     ModBlocks.geodes.get("redstone").BUDDING.get(),
                     ModBlocks.geodes.get("lapis").BUDDING.get(),
                     ModBlocks.geodes.get("diamond").BUDDING.get(),
-                    ModBlocks.geodes.get("emerald").BUDDING.get()
-                    ).build(null));
+                    ModBlocks.geodes.get("emerald").BUDDING.get(),
+                    ModBlocks.geodes.get("zinc") != null ? ModBlocks.geodes.get("zinc").BUDDING.get() : ModBlocks.EMPTY.get()
+            ).build(null));
 
 
 

@@ -18,6 +18,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfigurat
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ModConfiguredFeatures {
 
@@ -92,6 +93,9 @@ public class ModConfiguredFeatures {
                             ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(1),
                             -16, 16, 0.05D, 1));
 
+
+
+
     public static final Holder<ConfiguredFeature<GeodeConfiguration, ?>> LAPIS_GEODE =
             FeatureUtils.register("lapis_geode", Feature.GEODE,
                     new GeodeConfiguration(
@@ -130,7 +134,7 @@ public class ModConfiguredFeatures {
             FeatureUtils.register("diamond_geode", Feature.GEODE,
                     new GeodeConfiguration(
                             new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                                    BlockStateProvider.simple(Blocks.COBBLESTONE),
+                                    BlockStateProvider.simple(Blocks.COBBLED_DEEPSLATE),
                                     BlockStateProvider.simple(ModBlocks.geodes.get("diamond").BUDDING.get()),
                                     BlockStateProvider.simple(Blocks.CALCITE),
                                     BlockStateProvider.simple(Blocks.TUFF),
@@ -147,7 +151,7 @@ public class ModConfiguredFeatures {
             FeatureUtils.register("emerald_geode", Feature.GEODE,
                     new GeodeConfiguration(
                             new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                                    BlockStateProvider.simple(Blocks.COBBLESTONE),
+                                    BlockStateProvider.simple(Blocks.COBBLED_DEEPSLATE),
                                     BlockStateProvider.simple(ModBlocks.geodes.get("emerald").BUDDING.get()),
                                     BlockStateProvider.simple(Blocks.CALCITE),
                                     BlockStateProvider.simple(Blocks.TUFF),
@@ -159,6 +163,29 @@ public class ModConfiguredFeatures {
                             SETTINGS, new GeodeCrackSettings(0.95D, 2.0D, 2), 0.35D, 0.083D, true,
                             ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(1),
                             -16, 16, 0.05D, 1));
+
+
+    public static Holder<ConfiguredFeature<GeodeConfiguration, ?>> ZINC_GEODE = null;
+
+    static {
+        if (ModBlocks.geodes.get("zinc") != null){
+                  ZINC_GEODE = FeatureUtils.register("zinc_geode", Feature.GEODE,
+                            new GeodeConfiguration(
+                                    new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
+                                            BlockStateProvider.simple(Blocks.COBBLESTONE),
+                                            BlockStateProvider.simple(ModBlocks.geodes.get("zinc").BUDDING.get()),
+                                            BlockStateProvider.simple(Blocks.CALCITE),
+                                            BlockStateProvider.simple(Blocks.TUFF),
+                                            List.of(ModBlocks.geodes.get("zinc").SMALL.get().defaultBlockState(),
+                                                    ModBlocks.geodes.get("zinc").MEDIUM.get().defaultBlockState(),
+                                                    ModBlocks.geodes.get("zinc").LARGE.get().defaultBlockState(),
+                                                    ModBlocks.geodes.get("zinc").FULL.get().defaultBlockState()),
+                                            BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS),
+                                    SETTINGS, new GeodeCrackSettings(0.95D, 2.0D, 2), 0.35D, 0.083D, true,
+                                    ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(1),
+                                    -16, 16, 0.05D, 1));
+        }
+    }
 
     }
 
